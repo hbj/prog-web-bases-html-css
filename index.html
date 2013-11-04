@@ -1,0 +1,2610 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Prog. Web : HTML &amp; CSS, Notions Fondamentales</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- <link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print"> -->
+    <link rel="stylesheet" href="css/print/paper.css" type="text/css" media="print">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <!--
+    <script>
+        document.write('<link rel="stylesheet" href="css/print/' + ( window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">');
+    </script>
+    -->
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="reveal">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section data-background-color="rgba( 200, 50, 30, 0.4 )">
+                <h1>Prog. Web</h1>
+                <h2>HTML &amp; CSS</h2>
+                <h3>Notions Fondamentales</h3>
+                <div>Haykel Ben Jemia</div>
+                <div>2013</div>
+            </section>
+            <section data-background-color="rgba( 200, 50, 30, 0.4 )">
+                <h2>Resources</h2>
+                <h3>Internet</h3>
+                <div style="text-align: left;">
+                    <ul>
+                        <li>A Beginner’s Guide to HTML & CSS (base de ce cours):
+                            <a href="http://learn.shayhowe.com/html-css" target="_blank">http://learn.shayhowe.com/html-css</a>
+                        </li>
+                        <li>
+                            Mozilla Developer Network : <a href="http://developer.mozilla.org" target="_blank">http://developer.mozilla.org</a>
+                        </li>
+                        <li>Awwwards (meilleurs sites webs) :
+                            <a href="http://www.awwwards.com" target="_blank">http://www.awwwards.com</a>
+                        </li>
+                        <li>
+                            Spécification HTML 5 (en développement):
+                            <a href="http://www.w3.org/TR/html5" target="_blank">http://www.w3.org/TR/html5</a>
+                        </li>
+                    </ul>
+                </div>
+                <br>
+                <h3>Livres</h3>
+                <div style="text-align: left;">
+                    <ul>
+                        <li>
+                            <a href="http://www.editions-eni.fr/livres/html5-et-css3-maitrisez-les-standards-des-applications-web-2ieme-edition/.ad4c1a09e84155caa3d0d2e41af3fa23.html" target="_blank">
+                                HTML5 et CSS3 - Maîtrisez les standards des applications Web (2ième édition)</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section data-background-color="rgba( 50, 200, 90, 0.4 )">
+                <section>
+                    <h2>Introduction</h2>
+                    <h3>Internet</h3>
+                    <div>
+                        Système d'interconnexion de machines qui constitue un réseau informatique mondial, utilisant un
+                        ensemble standardisé de protocoles de transfert de données.
+                    </div>
+                    <br>
+                    <h3>World Wide Web (WWW, le Web)</h3>
+                    <div>Système de documents liés entre eux et accessibles à travers internet.</div>
+                    <br>
+                    <h3>Programmation Web</h3>
+                    <div>Développement de documents pour le web.</div>
+                </section>
+                <section>
+                    <h2>Introduction</h2>
+                    <h3>Documents web</h3>
+                    <div style="text-align: left; ">
+                        <ul>
+                            <li>Page web : un document.</li>
+                            <li>Site web : une collection de pages web.</li>
+                            <li>Application web : page / site web + interactivité + logique applicative.</li>
+                        </ul>
+                    </div>
+                    <br>
+                    <div>
+                        <h3>Outils du web</h3>
+                        <div>Languages (HTML, CSS, JavaScript), Protocole HTTP, Serveur, Navigateur (client).</div>
+                    </div>
+                </section>
+                <section>
+                    <h2>Introduction</h2>
+                    <h3>Pages statiques</h3>
+                    <div style="text-align: left;">
+                        <ul>
+                            <li>Contenu sur disque <b>=</b> contenu <u>chargé</u> par le navigateur.</li>
+                            <li>Aucune modification au contenu côté serveur.</li>
+                            <li>N.B. Le contenu peut être modifié côté client (JavaScript).</li>
+                        </ul>
+                    </div>
+                    <br>
+                    <h3>Pages dynamiques</h3>
+                    <div style="text-align: left;">
+                        <ul>
+                            <li>Contenu sur disque <b>≠</b> contenu <u>chargé</u> par le navigateur.</li>
+                            <li>Le contenu est généré dynamiquement (généralement à partir d'une BD et en fonction de
+                                paramètres fournis avec la demande).
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Introduction</h2>
+                    <h3>Programme client</h3>
+                    <div style="text-align: left; ">
+                        <ul>
+                            <li>Code exécuté sur le navigateur.</li>
+                            <li>Peut modifier le contenu en temps réel.</li>
+                            <li>Ne nécessite pas une connexion avec le serveur.</li>
+                            <li>Langage: JavaScript.</li>
+                        </ul>
+                    </div>
+                    <br>
+                    <h3>Programme Serveur</h3>
+                    <div style="text-align: left; ">
+                        <ul>
+                            <li>Code exécuté sur le serveur.</li>
+                            <li>Ne peut modifier le contenu que lors du chargement d'une page à partir du serveur.</li>
+                            <li>Langages: PHP, Ruby, Java, .Net (et tout autre langage).</li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+            <section data-background-color="rgba( 0, 0, 0, 0.4 )">
+                <section>
+                    <h2>Outils de Développement</h2>
+                    <h3>Editeurs</h3>
+                    <div style="text-align: left; ">
+                        <ul>
+                            <li>Editeurs de texte simples (pas traitement de texte!).</li>
+                            <li>Editeurs de code source (coloration syntaxique, mise en forme ...).</li>
+                            <li>EDIs (erreurs de syntaxe, insertion automatique de code, exécution de code, débogage
+                                ...).
+                            </li>
+                            <li>Editeurs WYSIWYG (différences de rendu avec les navigateurs, code généralement pas
+                                optimisé)
+                            </li>
+                            <li>Exemples: Notepad++, Sublime Text 2, gEdit, Eclipse WTP, PHPStorm (commercial).</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Outils de Développement</h2>
+                    <h3>Serveurs Web</h3>
+                    <div>Apache, Nginx, IIS</div>
+                    <br>
+                    <h3>Serveurs de BD</h3>
+                    <div>PostgreSQL, MySQL, MariaDB, Oracle, MongoDB ...</div>
+                    <br>
+                    <h3>Environnements Complets</h3>
+                    <div>LAMP, WAMP, MAMP, LAPP ...</div>
+                    <br>
+                    <h3>Débogage</h3>
+                    <div>EDIs, Navigateurs (intégrés ou extensions)</div>
+                </section>
+            </section>
+            <section data-background-color="rgba( 22, 152, 213, 0.4 )">
+                <section>
+                    <h2>Intro. à HTML &amp; CSS</h2>
+                    <h3>HTML</h3>
+                    <div>HTML (<u>H</u>ypertext <u>M</u>arkup
+                        <u>L</u>anguage) est un langage de balisage créé pour donner de la structure et un sens au
+                        contenu d'une page web.
+                    </div>
+                    <br>
+                    <h3>CSS</h3>
+                    <div>
+                        CSS (<u>C</u>ascading <u>S</u>tyle <u>S</u>heets) est un langage de présentation créé pour
+                        définir la présentation visuelle du
+                        contenu d'une page web.
+                    </div>
+                </section>
+                <section>
+                    <h2>Intro. à HTML &amp; CSS</h2>
+                    <h3>Termes HTML</h3>
+                    <div style="text-align: left; ">
+                        <u>Eléments</u>: désignent des objets dans une page. Exemples: h1, p, a, div, em.
+                    </div>
+                    <div style="text-align: left; ">
+                        <u>Balises</u>: définissent la structure des éléments. Généralement un élément est constitué de
+                        deux balises: une balise ouvrante et une balise fermante. Exemple:
+                    </div>
+                    <pre><code><h1>contenu de l'élément h1</h1></code></pre>
+                    <div style="text-align: left; ">
+                        <u>Attributs</u>: propriétés utilisées les balises pour donner des instructions supplémentaires
+                        aux éléments. Exemple:
+                    </div>
+                    <pre><code><h1 class="main">contenu de l'élément h1</h1></code></pre>
+                </section>
+                <section>
+                    <h2>Intro. à HTML &amp; CSS</h2>
+                    <h3>Structure d'une page HTML</h3>
+                    <pre><code>&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;Hello World&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+    &lt;p&gt;This is a website.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    <ul>
+                        <li><u>doctype</u>: version HTML utilisée ('html' pour HTML5)</li>
+                        <li><u>html</u>: le document</li>
+                        <li><u>head</u>: titre, métadonnées (non visibles sur la page)</li>
+                        <li><u>body</u>: contenu (visible sur la page)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Intro. à HTML &amp; CSS</h2>
+                    <h3>Termes CSS</h3>
+                    <div style="text-align: left; ">
+                        <u>Sélecteurs</u>: déterminent exactement à quels éléments les styles correspondants seront
+                        appliqués.
+                    </div>
+                    <div style="text-align: left; ">
+                        <u>Propriétés</u>: déterminent les styles qui vont être appliqués.
+                    </div>
+                    <div style="text-align: left; ">
+                        <u>Valeurs</u>: déterminent le comportement des propriétés correspondantes.
+                    </div>
+                    <div style="text-align: left; ">Exemple:</div>
+                    <pre><code>p {
+  color: #ff0000;
+  font-size: 16px;
+}</code></pre>
+                    <div style="text-align: left; ">
+                        Sélectionne tous les paragraphes ('p') et leur applique une couleur de texte rouge et une taille
+                        de police de 16 pixels.
+                    </div>
+                </section>
+                <section>
+                    <h2>Intro. à HTML &amp; CSS</h2>
+                    <h3>Ecriture longue vs. courte</h3>
+                    <div style="text-align: left; ">
+                        Certains styles CSS peuvent être définis de différentes façons: en définissant les différentes
+                        propriétés séparément, une par ligne (écriture longue), ou en définissant toutes les propriétés
+                        en une seule ligne (écriture courte). Exemple:
+                    </div>
+                    <pre><code>/* Ecriture longue */
+p {
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+
+/* Ecriture courte */
+p {
+  padding: 10px 20px;
+}</code></pre>
+                </section>
+                <section>
+                    <h2>INTRO. À HTML &amp; CSS</h2>
+                    <h3>Commentaires HTML</h3>
+                    <div style="text-align: left; ">
+                        En HTML, des commentaires peuvent être ajoutés au code en le mettant entre <code>&lt;!--</code>
+                        et <code>--&gt;</code>. Ce texte ne sera pas affiché dans la page. Exemple:
+                    </div>
+                    <pre><code>&lt;!-- commentaire HTML --&gt;</code></pre>
+                    <br>
+                    <h3>Commentaires CSS</h3>
+                    <div style="text-align: left; ">
+                        En CSS, des commentaires peuvent être ajoutés au code en le mettant entre <code>/*</code> et
+                        <code>*/</code>. Ce texte ne sera pas interprété. Exemple:
+                    </div>
+                    <pre><code>/* commentaire CSS */</code></pre>
+                </section>
+                <section>
+                    <h2>INTRO. À HTML &amp; CSS</h2>
+                    <h3>Validation de Code</h3>
+                    <div style="text-align: left; ">
+                        Le W3C met à disposition des développeurs des validateurs HTML et CSS. Ceux-ci analysent le code
+                        à la recherche d'erreurs. La validation nous aide à détecter les erreurs, à nous assurer
+                        que notre code sera affiché correctement par les navigateurs et à apprendre les bonnes pratiques
+                        à suivre.<br>
+                        Les validateurs sont accessible sur les liens suivants:
+                        <ul>
+                            <li>
+                                HTML : <a href="http://validator.w3.org" target="_blank">http://validator.w3.org</a>
+                            </li>
+                            <li>
+                                CSS : <a href="http://jigsaw.w3.org/css-validator" target="_blank">http://jigsaw.w3.org/css-validator</a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+            <section data-background-color="rgba( 200, 50, 30, 0.4 )">
+                <section>
+                    <h2>Sélecteurs CSS</h2>
+                    <h3>Sélecteurs de type</h3>
+                    <div style="text-align: left;">
+                        Ciblent les éléments grâce à leurs types.<br>
+                        <em>Exemple:</em>
+                        <table style="width: 100%">
+                            <thead>
+                                <tr>
+                                    <th style="width: 50%">HTML</th>
+                                    <th style="width: 50%">CSS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <pre><code class="html">&lt;p&gt; ... &lt;/p&gt;</code></pre>
+                                    </td>
+                                    <td>
+                                        <pre><code class="css">/* Eléments de type paragraphe */
+p {  }</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section>
+                    <h2>Sélecteurs CSS</h2>
+                    <h3>Sélecteurs d'ID</h3>
+                    <div style="text-align: left;">
+                        Ciblent les éléments grâce à leurs IDs. Un ID ne peut être affecté qu'une seule fois dans une
+                        page.<br>
+                        <em>Exemple:</em>
+                        <table style="width: 100%">
+                            <thead>
+                                <tr>
+                                    <th style="width: 50%">HTML</th>
+                                    <th style="width: 50%">CSS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <pre><code class="html">&lt;div id=&quot;header&quot;&gt;...&lt;/div&gt;</code></pre>
+                                    </td>
+                                    <td>
+                                        <pre><code class="css">/* L'élément avec
+   id='header' */
+#header {  }
+
+/* L'élément 'div' avec
+   id='header' */
+div#header {  }</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section>
+                    <h2>Sélecteurs CSS</h2>
+                    <h3>Sélecteurs de classe</h3>
+                    <div style="text-align: left;">
+                        Ciblent les éléments grâce à leurs classes. Une classe peut être affectée plusierus fois dans
+                        une page.<br>
+                        <em>Exemple:</em>
+                        <table style="width: 100%">
+                            <thead>
+                                <tr>
+                                    <th style="width: 50%">HTML</th>
+                                    <th style="width: 50%">CSS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <pre><code class="html">&lt;div class=&quot;comment&quot;&gt;...&lt;/div&gt;
+&lt;div class=&quot;comment even&quot;&gt;...&lt;/div&gt;</code></pre>
+                                    </td>
+                                    <td>
+                                        <pre><code class="css">/* Tous les éléments avec
+   class='comment' */
+.comment {  }
+
+/* Eléments 'div' avec
+   class='comment' */
+div.comment {  }</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section>
+                    <h2>Sélecteurs CSS</h2>
+                    <h3>Pseudo-classes</h3>
+                    <div style="text-align: left;">
+                        Les pseudo-classes sont utilisées pour cibler les éléments selon leurs états.<br>
+                        <em>Exemples:</em>
+                        <pre><code class="css">/* Les liens visités */
+a:visited {  }
+
+/* Tous les 'div' au moment où l'utilisateur passe la souris dessus */
+div:hover {  }
+
+/* Parmis les paragraphes descendants d'un autre élément,
+   cibler le premier */
+p:first-child {  }
+
+/* Parmis les paragraphes descendants d'un autre élément,
+   cibler le dernier */
+p:last-child {  }</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Sélecteurs CSS</h2>
+                    <h3>Sélection par attributs</h3>
+                    <div style="text-align: left;">
+                        Il est possible de cibler les éléments selon les valeurs de leurs attributs.<br>
+                        <em>Exemples:</em>
+                        <pre><code class="css">/* Tous les paragraphes qui possèdent un attribut 'title' */
+p[title] {  }
+
+/* Tous les champs de formulaire dont l'attribut 'type'
+   est égal à 'text' */
+input[type=text] {  }</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Sélecteurs CSS</h2>
+                    <h3>Combinaisons de sélecteurs</h3>
+                    <div style="text-align: left;">
+                        Il est possible de combiner plusieurs sélecteurs pour cibler les éléments avec plus de
+                        précision.<br>
+                        <em>Exemples:</em>
+                        <pre><code class="css">/* Tous les paragraphes qui sont des descendants du 'div'
+   dont l'ID est 'content' */
+div#content p {  }
+
+/* Tous les paragraphes qui sont des descendants DIRECTES
+   du 'div' dont l'ID est 'content' */
+div#content > p {  }
+
+/* Tous les paragraphes et tous les 'div' de classe 'comment' */
+p, div.comment {  }</code></pre>
+                    </div>
+                </section>
+            </section>
+            <section data-background-color="rgba( 50, 200, 90, 0.4 )">
+                <section>
+                    <h2>Référencement du CSS</h2>
+                    <div style="text-align: left;">
+                        Dans une page HTML, il est possible de référencer du code CSS de trois façons différentes:
+                        <ul>
+                            <li>
+                                <em>Fichier externe</em> : le code CSS se trouve dans un fichier externe. Il est
+                                référencé par un élément <code>link</code> dans la
+                                section <code>head</code> du document. C'est la
+                                méthode préférée car elle sépare le HTML et le CSS et permet de
+                                réutiliser le fichier sur plusieurs pages.
+                            </li>
+                            <li>
+                                <em>Interne</em> : le code CSS se trouve dans la page HTML, dans un élément
+                                <code>style</code>.
+                            </li>
+                            <li><em>
+                                En ligne</em> : le code CSS est définit dans l'attribut <code>style</code> de la balise
+                                à laquelle il va être appliqué.
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Référencement du CSS</h2>
+                    <div style="text-align: left;">
+                        <em>Exemples:</em>
+                        <pre class="html"><code>&lt;!-- Fichier externe (dans la section 'head' du document) --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;file.css&quot;&gt;
+
+&lt;!-- Interne --&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+p {
+  color: #f60;
+  font-size: 16px;
+}
+&lt;/style&gt;
+
+&lt;!-- En ligne --&gt;
+&lt;p style=&quot;color: #f60; font-size: 16px;&quot;&gt;...&lt;/p&gt;</code></pre>
+                    </div>
+                </section>
+            </section>
+            <section data-background-color="rgba( 0, 0, 0, 0.4 )">
+                <h2>Eléments bloc vs. en ligne</h2>
+                <div>
+                    Tous les éléments HTML sont soit des éléments bloc soit des éléments en ligne.
+                </div>
+                <br>
+                <h3>Eléments bloc</h3>
+                <div>
+                    Ils commencent sur une nouvelle ligne et occupent tout l'espace horizontal disponible. Ils peuvent
+                    contenir aussi bien des éléments bloc que des éléments en ligne.
+                </div>
+                <br>
+                <h3>Eléments en ligne</h3>
+                <div>
+                    Ils ne commencent pas sur une nouvelle ligne et entrent dans le flux normal du texte. Ils n'occupent
+                    que l'espace horizontal necessaire à leur rendu et ne peuvent contenir que des éléments en ligne.
+                </div>
+            </section>
+            <section data-background-color="rgba( 22, 152, 213, 0.4 )">
+                <section>
+                    <h2>Divisions &amp; Spans</h2>
+                    <div>
+                        Les divisions <code>&lt;div&gt;</code> et les spans <code>&lt;span&gt;</code> agissent comme des
+                        contenaires génériques.<br>
+                        Ils ne possèdent pas de valeur sémantique.<br>
+                        Ils sont très importants car ils permettent d'appliquer du CSS d'une façon ciblée.
+                    </div>
+                </section>
+                <section>
+                    <h2>Divisions &amp; Spans</h2>
+                    <h3>Division</h3>
+                    <div>
+                        Elément bloc.<br>
+                        Sert généralement à identifier différentes parties d'une page pour aider dans la définition de
+                        son aspect visuel.
+                    </div>
+                    <br>
+                    <h3>Span</h3>
+                    <div>
+                        Elément en ligne.<br>
+                        Sert généralement à identifier une petite section de texte à l'intérieur d'un élément bloc.
+                    </div>
+                </section>
+                <section>
+                    <h2>Divisions &amp; Spans</h2>
+                    <h3>Exemples</h3>
+                    <pre><code>&lt;!-- div --&gt;
+&lt;div class=&quot;social&quot;&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet...&lt;/p&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet...&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- span --&gt;
+&lt;p&gt;Lorem ipsum &lt;span class=&quot;tooltip&quot;&gt;dolor sit&lt;/span&gt; amet...&lt;/p&gt;</code></pre>
+                </section>
+            </section>
+            <section data-background-color="rgba( 200, 50, 30, 0.4 )">
+                <section>
+                    <h2>Eléments de typographie</h2>
+                    <h3>Entêtes</h3>
+                    <div>
+                        Eléments bloc.<br>
+                        Existent en 6 niveaux: <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>,
+                        <code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code>.<br>
+                        Servent à diviser le contenu en sections et définir leur hirarchie.<br>
+                        Donnent un titre aux sections qui les suivent.<br>
+                        Utilisés par les moteurs de recherche pour déterminer l'importance d'un contenu sur la page.<br>
+                        <strong>IMPORTANT</strong>: ne pas utiliser pour définir la taille du texte.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <pre><code>&lt;h1&gt;Entête niveau 1&lt;/h1&gt;
+&lt;h2&gt;Entête niveau 2&lt;/h2&gt;
+&lt;h3&gt;Entête niveau 3&lt;/h3&gt;</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Eléments de typographie</h2>
+                    <h3>Paragraphes</h3>
+                    <div>
+                        Eléments bloc.<br>
+                        Servent à ajouter des paragraphes à un document.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <pre><code>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+   Ut enim ad minim veniam, quis nostrud exercitation ullamco.&lt;/p&gt;
+&lt;p&gt;Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+   dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+   non proident.&lt;/p&gt;</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Eléments de typographie</h2>
+                    <h3>Strong</h3>
+                    <div>
+                        Elément en ligne.<br>
+                        Utilisé pour donner de l'importance à un texte.<br>
+                        Affiché généralement en gras par les navigateurs.<br>
+                        <strong>IMPORTANT</strong>: Ne pas utiliser pour le formatage.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <pre><code>&lt;p&gt;Avant de faire X il est &lt;strong&gt;nécessaire&lt;/strong&gt; de faire Y avant.&lt;/p&gt;</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Eléments de typographie</h2>
+                    <h3>Em</h3>
+                    <div>
+                        Elément en ligne.<br>
+                        Sert à marquer un texte sur lequel on veut insister.<br>
+                        Affiché généralement en italique par les navigateurs.<br>
+                        <strong>IMPORTANT</strong>: Ne pas utiliser pour le formatage.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <pre><code>&lt;p&gt;Dans &lt;em&gt;HTML5&lt;em&gt;, ce qui était appelé contenu de &lt;em&gt;type bloc&lt;/em&gt;
+   est maintenant appelé contenu de &lt;em&gt;flux&lt;/em&gt;.&lt;/p&gt;</code></pre>
+                    </div>
+                </section>
+            </section>
+            <section data-background-color="rgba( 50, 200, 90, 0.4 )">
+                <section>
+                    <h2>Hyperliens</h2>
+                    <div>
+                        Eléments en ligne.<br>
+                        Eléments clés du web (Hypertext).<br>
+                        Permettent d'atteindre des cibles en cliquant dessus.<br>
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <pre><code>&lt;a href=&quot;http://www.google.com&quot;&gt;Google&lt;/a&gt;</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Hyperliens</h2>
+                    <h3>Chemins absolus</h3>
+                    <div>
+                        Contiennent le chemin complet d'une page, incluant protocole et domaine.<br>
+                        Utilisés pour référencer des pages externes au site.<br>
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <pre><code>&lt;a href=&quot;http://www.google.com&quot;&gt;Rechercher sur Google&lt;/a&gt;</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Hyperliens</h2>
+                    <h3>Chemins relatifs</h3>
+                    <div>
+                        Ne contiennent ni protocole ni domaine, seulement le chemin de la page.<br>
+                        Sont résolus relativement à la page actuelle et son domaine.<br>
+                        Utilisés pour référencer des pages du même site.<br>
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemples:</em>
+                        <pre><code>&lt;a href=&quot;/about.html&quot;&gt;A propos&lt;/a&gt;
+&lt;a href=&quot;/pages/about.html&quot;&gt;A propos&lt;/a&gt;</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Hyperliens</h2>
+                    <h3>Adresses mail</h3>
+                    <div>
+                        Il est possible de définir des liens vers des adresses mail.<br>
+                        Un clique dessus ouvre le client mail par défaut de l'utilisateur.<br>
+                        L'adresse mail est ajoutée automatiquement comme destinataire.<br>
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemples:</em>
+                        <pre><code>&lt;a href=&quot;mailto:nom@exemple.com&quot;&gt;Me contacter par mail&lt;/a&gt;</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Hyperliens</h2>
+                    <h3>Nouvelle fenêtre</h3>
+                    <div>
+                        Par défaut, un hyperlien ouvre la page cible dans la même fenêtre et remplace la page originale.<br>
+                        Il est possible d'instruire le navigateur d'ouvrire la cible dans une nouvelle fenêtre en
+                        mettant l'attribut <code>target</code> sur <code>_blank</code>.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <pre><code>&lt;a href=&quot;http://www.google.com&quot; target=&quot;_blank&quot;&gt;Rechercher sur Google&lt;/a&gt;</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Hyperliens</h2>
+                    <h3>Liens internes</h3>
+                    <div>
+                        Il est possible de définir des liens vers d'autres parties de la même page.<br>
+                        Exemples d'utilisation: créer des tables de contenu, lier différentes section d'un document
+                        entre elles.<br>
+                        L'élément qu'on veut mettre comme cible doit avoir un ID.<br>
+                        On utilise l'ID de la cible précédé de '#' comme référence.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <pre><code>&lt;p&gt;Voir &lt;a href=&quot;#exemple&quot;&gt;l'exemple&lt;/a&gt; pour plus de détails.&lt;/p&gt;
+&lt;h2 id=&quot;exemple&quot;&gt;Exemple d'utilisation des hyperliens&lt;/h2&gt;</code></pre>
+                    </div>
+                </section>
+            </section>
+            <section data-background-color="rgba( 0, 0, 0, 0.4 )">
+                <section>
+                    <h2>Eléménets HTML5 de structure</h2>
+                    <div>
+                        <em>HTML5</em> introduit de nouveaux éléments dont la fonction principale est d'améliorer la
+                        sémantique.<br>
+                        Jusqu'ici, on utilisait principalement <code>div</code> pour structurer un
+                        document.<br>
+                        Les nouveaux éléments structurels nous permettent d'ajouter de la sémantique à la
+                        structure.
+                    </div>
+                    <img style="background-color: #fff" src="images/html5.png">
+                </section>
+                <section>
+                    <h2>Eléménets HTML5 de structure</h2>
+                    <h3>Header</h3>
+                    <div>
+                        Elément bloc.<br>
+                        Représente un groupe d'introduction pour une page ou section d'une page.<br>
+                        Exemples de contenu: entêtes, texte d'introduction, éléments de navigation, logo, formulaire de
+                        recherche, etc.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <pre><code>&lt;header&gt;
+  &lt;h1&gt;Titre du document&lt;/h1&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;index.html&quot;&gt;Accueil&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;contact.html&quot;&gt;Contacte&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Eléménets HTML5 de structure</h2>
+                    <h3>Footer</h3>
+                    <div>
+                        Elément bloc.<br>
+                        Représente le pied de page ou de section d'une page.<br>
+                        Le contenu devrait être relatif à la section qui le contient.<br>
+                        Exemples de contenu: auteur, copyright, liens vers des documents en relation, etc.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <pre><code>&lt;footer&gt;Copyright 2013 XYZ&lt;/footer&gt;</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Eléménets HTML5 de structure</h2>
+                    <h3>Nav</h3>
+                    <div>
+                        Elément bloc.<br>
+                        Représente une section ayant des liens de navigation.<br>
+                        Reservée aux sections de navigation principales, comme une table de contenu de la page,
+                        navigation au sein du même site, etc.<br>
+                        Eviter d'y insérer des liens externe.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <pre><code>&lt;header&gt;
+  &lt;h3&gt;Table de contenu&lt;/h3&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#introduction&quot;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#html&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#css&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Eléménets HTML5 de structure</h2>
+                    <h3>Article</h3>
+                    <div>
+                        Elément bloc.<br>
+                        Représente du contenu autonome qui peut être distribué ou réutilisé indépendemment, par exemple
+                        dans un flux RSS.<br>
+                        Exemples de contenu: message de forum, article de journal ou magazine, article de blog,
+                        commentaire d'utilisateur, etc.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <pre><code>&lt;article&gt;
+  &lt;header&gt;&lt;h1&gt;Titre de l'article&lt;/h1&gt;&lt;/header&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+     volutpat semper nisi, eget pretium nibh imperdiet eget. Nullam eu
+     convallis turpis. Sed convallis libero eu felis tempus mollis&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Eléménets HTML5 de structure</h2>
+                    <h3>Section</h3>
+                    <div>
+                        Elément bloc.<br>
+                        Représente un groupement thématique de contenu.<br>
+                        Ne pas utiliser si le seul but est l'application de styles CSS, ceci est le rôles des divisions
+                        <code>div</code>.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <pre><code>&lt;article&gt;
+  &lt;section&gt;
+    &lt;header&gt;&lt;h1&gt;Introduction&lt;/h1&gt;&lt;/header&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit...&lt;/p&gt;
+  &lt;/section&gt;
+  &lt;section&gt;
+    &lt;header&gt;&lt;h1&gt;HTML&lt;/h1&gt;&lt;/header&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit...&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/article&gt;</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Eléménets HTML5 de structure</h2>
+                    <h3>Aside</h3>
+                    <div>
+                        Elément bloc.<br>
+                        Représente du contenu indirectement lié à ce qui l'entoure et peut en être séparé.<br>
+                        Exemples de contenu: glossaire, image, publicité, barre d'outils, liens externes en relation,
+                        etc.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <pre><code>&lt;article&gt;
+  &lt;p&gt;Cet &eacute;t&eacute;, nous avons visit&eacute; le Louvre.&lt;/p&gt;
+  &lt;aside&gt;
+    &lt;h4&gt;Louvre&lt;/h4&gt;
+    &lt;p&gt;Le plus grand mus&eacute;e de Paris.&lt;/p&gt;
+  &lt;/aside&gt;
+&lt;/article&gt;</code></pre>
+                    </div>
+                </section>
+            </section>
+            <section data-background-color="rgba( 22, 152, 213, 0.4 )">
+                <section>
+                    <h2>Valeurs CSS</h2>
+                    <h3>Longueurs</h3>
+                    <div>
+                        Il existe plusierus unités en CSS pour définir les longueurs.<br>
+                        Certaines définissent des valeurs absolues, comme <code>px</code> pour pixels.<br>
+                        D'autres définissent des valeurs relatives, comme <code>%</code> pour pourcentage de la taille
+                        du
+                        parent et <code>em</code> pour fraction de la taille actuelle de la
+                        police.<br>
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemples:</em>
+                        <pre><code>div {
+  width: 50px; /* 50 pixels */
+  width: 50%; /* moitié de la largeur du parent */
+  padding-top: 0.5em; /* moitié de la taille actuelle de la police */
+}</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Valeurs CSS</h2>
+                    <h3>Couleurs</h3>
+                    <div>
+                        Les couleurs en CSS peuvent être définies de différents façons.<br>
+                        Les plus répandues utilisent les valeurs des composants rouge, vert, bleu et alpha.<br>
+                        Chaque composant possède une valeur entre 0 et 255 (00 et FF en hexdécimal).
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemples:</em>
+                        <pre><code>div {
+  color: #000000; /* noir */
+  color: #FF0000; /* rouge */
+  color: #00FF00; /* vert */
+  color: #0000FF; /* bleu */
+  color: rgb(0, 0, 255); /* bleu */
+  color: rgba(0, 0, 255, 0.5); /* bleu à moitié transparent */
+}</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Valeurs CSS</h2>
+                    <h3>Images</h3>
+                    <div>
+                        Certaines propriétés CSS acceptent des références d'images dans leurs valeurs.<br>
+                        Une référence d'image est définie par un chemin relatif ou absolu.<br>
+                        Un chemin relatif est résolu relativement à l'emplacement du fichier dans lequel la propriété
+                        est définie.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemples:</em>
+                        <pre><code>div {
+  /* chemin relatif */
+  background-image: url('images/logo.png');
+
+  /* chemin absolu */
+  background-image: url('http://monsite.com/images/logo.png');
+}</code></pre>
+                    </div>
+                </section>
+            </section>
+            <section data-background-color="rgba( 200, 50, 30, 0.4 )">
+                <section>
+                    <h2>Le Modèle des Boîtes</h2>
+                    <div>
+                        Tout élément HTML est une boîte rectangulaire.<br>
+                        Le modèle des boîtes de CSS décrit ces boîtes et nous permet d'ajuster les marges, les bordures,
+                        les espacements et la taille de chaque élément.<br>
+                        <img style="background-color: #fff" src="images/box-model.png">
+                    </div>
+                </section>
+                <section>
+                    <h2>Le Modèle des Boîtes</h2>
+                    <h3>Height</h3>
+                    <div>
+                        Définit la hauteur d'un élément bloc.<br>
+                        Par défaut, dépend du contenu de l'élément.<br>
+                        Peut être fixée à une valeur précise.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <pre><code>div {
+  height: 100px;
+}</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Le Modèle des Boîtes</h2>
+                    <h3>Width</h3>
+                    <div>
+                        Définit la largeur d'un élément bloc.<br>
+                        Par défaut, occupe tout l'espace horizontal disponible.<br>
+                        Peut être fixée à une valeur précise.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <pre><code>div {
+  width: 400px;
+}</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Le Modèle des Boîtes</h2>
+                    <h3>Margin</h3>
+                    <div>
+                        Sert à définir l'espacement autour d'un élément.<br>
+                        Se trouve en dehors de la bordure et est transparent.<br>
+                        Valeur par défaut dépend de l'élément et du navigateur.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemples:</em>
+                        <table style="width: 100%">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 50%">
+                                        <pre><code>div {
+  /* t:20px r:20px b:20px l:20px */
+  margin: 20px;
+
+  /* t:20px r:10px b:20px l:10px */
+  margin: 20px 10px;
+
+  /* t:20px r:10px b:5px l:10px */
+  margin: 20px 10px 5px;
+
+  /* t:20px r:10px b:5px l:1px */
+  margin: 20px 10px 5px 1px;
+}</code></pre>
+                                    </td>
+                                    <td style="width: 50%">
+                                        <pre><code>div {
+  /* t:20px r:10px b:5px l:1px */
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  margin-left: 1px;
+}</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section>
+                    <h2>Le Modèle des Boîtes</h2>
+                    <h3>Padding</h3>
+                    <div>
+                        Sert à définir l'espacement entre le contenu et la bordure.<br>
+                        Se trouve à l'intérieur de la bordure et prend la couleur de fond de l'élément.<br>
+                        Valeur par défaut dépend de l'élément et du navigateur.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemples:</em>
+                        <table style="width: 100%">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 50%">
+                                        <pre><code>div {
+  /* t:20px r:20px b:20px l:20px */
+  padding: 20px;
+
+  /* t:20px r:10px b:20px l:10px */
+  padding: 20px 10px;
+
+  /* t:20px r:10px b:5px l:10px */
+  padding: 20px 10px 5px;
+
+  /* t:20px r:10px b:5px l:1px */
+  padding: 20px 10px 5px 1px;
+}</code></pre>
+                                    </td>
+                                    <td style="width: 50%">
+                                        <pre><code>div {
+  /* t:20px r:10px b:5px l:1px */
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 1px;
+}</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section>
+                    <h2>Le Modèle des Boîtes</h2>
+                    <h3>Border</h3>
+                    <div>
+                        Sert à définir une bordure autour d'un élément.<br>
+                        Se trouve entre <code>padding</code> et <code>margin</code>.<br>
+                        Une bordure possède trois propriétés: <code>width</code>, <code>style</code> et
+                        <code>color</code>.<br>
+                        Valeur par défaut: aucune bordure.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemples:</em>
+                        <table style="width: 100%">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 50%">
+                                        <pre><code>div {
+  /* Aucune bordure */
+  border: none;
+
+  /* Ligne continue */
+  border: 3px solid #cccccc;
+
+  /* Ligne discontinue */
+  border: 3px dashed #cccccc;
+
+  /* Ligne pointillée */
+  border: 3px dotted #cccccc;
+}</code></pre>
+                                    </td>
+                                    <td style="width: 50%">
+                                        <pre><code>div {
+  border-top: 3px solid #cccccc;
+  border-right: 3px solid #cccccc;
+  border-bottom: 3px solid #cccccc;
+  border-left: 3px solid #cccccc;
+}</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </section>
+            <section data-background-color="rgba( 50, 200, 90, 0.4 )">
+                <section>
+                    <h2>Positionnement</h2>
+                    <div style="text-align: left">
+                        <p>CSS met à disposition les propriétés suivantes pour contrôler le positionnement d'un
+                            élément:</p>
+                        <ul>
+                            <li>
+                                <code>position</code> : type de positionnement à utiliser.
+                            </li>
+                            <li>
+                                <code>top</code> : décalage du bord gauche de l'élément.
+                            </li>
+                            <li>
+                                <code>right</code> : décalage du bord droit de l'élément.
+                            </li>
+                            <li>
+                                <code>bottom</code> : décalage du bord supérieur de l'élément.
+                            </li>
+                            <li>
+                                <code>left</code> : décalage du bord inférieur de l'élément.
+                            </li>
+                        </ul>
+                        <p><em>N.B.</em> Les propriétés de décalage s'appliquent par rapport à différentes sources selon
+                            le type
+                            de positionnement.</p>
+                    </div>
+                </section>
+                <section>
+                    <h2>Positionnement</h2>
+                    <h3>Positionnement statique</h3>
+                    <div>
+                        C'est le type de positionnement utilisé par défaut.<br>
+                        L'élément est positionné selon son flux normal.<br>
+                        Sa position ne peut pas être modifiée et les propriétés de décalage n'ont aucun effet.
+                    </div>
+                    <div style="text-align: left">
+                        Exemple:
+                        <pre><code>div {
+  position: static;
+}</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Positionnement</h2>
+                    <h3>Positionnement relatif</h3>
+                    <div>
+                        L'élément est positionné relativement à sa position statique.<br>
+                        Les propriétés de décalage s'appliquent donc par rapport à la position statique.
+                    </div>
+                    <div style="text-align: left">
+                        Exemple:
+                        <pre><code>div {
+  position: relative;
+  top: 50px;
+  left: 100px;
+}</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Positionnement</h2>
+                    <h3>Positionnement absolu</h3>
+                    <div>
+                        L'élément est détaché du flux normal du document et n'influence plus le positionnement des
+                        autres éléments.<br>
+                        Les propriétés de décalage s'appliquent par rapport au premier parent ayant une position non
+                        statique, ou par rapport au document si un tel parent n'existe pas.
+                    </div>
+                    <div style="text-align: left">
+                        Exemple:
+                        <pre><code>div {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 50px;
+  right: 100px;
+}</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Positionnement</h2>
+                    <h3>Positionnement fixe</h3>
+                    <div>
+                        L'élément est détaché du flux normal du document et n'influence plus le positionnement des
+                        autres éléments.<br>
+                        Les propriétés de décalage s'appliquent toujours par rapport au document.<br>
+                        L'élément reste fixe même lorsqu'on fait défiler le document.
+                    </div>
+                    <div style="text-align: left">
+                        Exemple:
+                        <pre><code>div {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  top: 50px;
+  left: 100px;
+}</code></pre>
+                    </div>
+                </section>
+            </section>
+            <section data-background-color="rgba( 0, 0, 0, 0.4 )">
+                <section>
+                    <h2>Flottement</h2>
+                    <div>
+                        Il est possible de faire flotter un élément vers le côté droite ou le côté gauche de sont
+                        parent.<br>
+                        La position verticale d'un élément flottant est déduite de son flux normal, mais il est poussé
+                        horizontalement vers l'un des bords de son parent.<br>
+                        Des éléments flottants sur le même côté sont alignés horizontalement.<br>
+                        Les éléments non flottants sont alignés autour des éléments flottants.<br>
+                        Le flottement est définit avec la propriété <code>float</code>, qui peut avoir les valeurs
+                        <code>left</code> (à gauche), <code>right</code> (à droite) ou <code>none</code> (pas de
+                        flottement).
+                    </div>
+                </section>
+                <section>
+                    <h2>Flottement</h2>
+                    <h3>Exemple</h3>
+                    <table style="width: 100%">
+                        <tbody>
+                            <tr>
+                                <td style="width: 50%">
+                                    <pre><code class="html">&lt;style&gt;
+img {
+  float: left;
+}
+&lt;/style&gt;
+&lt;p&gt;
+  Some sample text in the first
+  paragraph. It has a floating
+  image right about here
+  &lt;img src=&quot;...&quot;&gt; ...
+&lt;/p&gt;
+&lt;p&gt;
+  The second paragraph is
+  therefore also affected...
+&lt;/p&gt;</code></pre>
+                                </td>
+                                <td style="width: 50%">
+                                    <img src="images/float2p.png">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h2>Flottement</h2>
+                    <h3>Dégagement</h3>
+                    <div>
+                        Par défaut, les éléments non flottants sont alignés autour des éléments flottants.<br>
+                        Pour annuler cet effet, on utilise la propriété <code>clear</code>.<br>
+                        Cette propriété veute dire : '<em>Annuler l'alignement autour d'éléments flottants sur le côté
+                        désigné</em>'.<br>
+                        Le côté à dégager est définit à travers l'une des valeurs suivantes: <code>left</code> (gauche),
+                        <code>right</code> (droite) et <code>both</code> (les deux).
+                    </div>
+                </section>
+                <section>
+                    <h2>Flottement</h2>
+                    <h3>Dégagement : Exemple</h3>
+                    <table style="width: 100%">
+                        <tbody>
+                            <tr>
+                                <td style="width: 50%">
+                                    <pre><code class="html">&lt;p&gt;
+  Some sample text in the first
+  paragraph. It has a floating
+  image right about here
+  &lt;img style=&quot;float: left&quot; ...&gt; ...
+&lt;/p&gt;
+&lt;p style=&quot;clear: left&quot;&gt;
+  The second paragraph is
+  therefore also affected...
+&lt;/p&gt;</code></pre>
+                                </td>
+                                <td style="width: 50%">
+                                    <img src="images/floatclear.png">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+            <section data-background-color="rgba( 22, 152, 213, 0.4 )">
+                <section>
+                    <h2>CSS Typographique</h2>
+                    <h3>color</h3>
+                    <div>
+                        La propriété <code>color</code> définit la couleur du texte.<br>
+                        Héritée si non-définie.
+                    </div>
+                    <div style="text-align: left">
+                        Exemple:
+                        <pre><code>body {
+  color: #555;
+}</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>CSS Typographique</h2>
+                    <h3>font-family</h3>
+                    <div>
+                        La propriété <code>font-family</code> définit les polices à utiliser par ordre de préférence. Si
+                        une police n'est pas disponible, le navigateur essaie d'utiliser la suivante.<br>
+                        Héritée si non-définie.<br>
+                        Quelques polices répandues: Arial, Courier New, Lucida Sans, Tahoma, Times New Roman, Verdana.
+                    </div>
+                    <div style="text-align: left">
+                        Exemple:
+                        <pre><code>p {
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>CSS Typographique</h2>
+                    <h3>font-size</h3>
+                    <div>
+                        La propriété <code>font-size</code> définit la taille de police à utiliser.<br>
+                        Valeurs répandues: une longueur (px, em, % etc.), <code>small</code> (petite
+                        taille), <code>medium</code> (taille moyenne), <code>large</code> (grande taille) et <code>inherit</code>
+                        (hériter).<br>
+                        Héritée si non-définie. Valeur par défaut: <code>medium</code>.
+                    </div>
+                    <div style="text-align: left">
+                        Exemple:
+                        <pre><code>p {
+  /* valeur absolue de 20 pixels */
+  font-size: 20px;
+}
+
+h1 {
+  /* 1.7 * taille actuelle */
+  font-size: 1.7em;
+}</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>CSS Typographique</h2>
+                    <h3>font-style</h3>
+                    <div>
+                        La propriété <code>font-style</code> définit le style de police à utiliser.<br>
+                        Valeurs répandues: <code>normal</code> (texte normal), <code>italic</code>
+                        (texte italique) et <code>inherit</code> (hériter).<br>
+                        Héritée si non-définie. Valeur par défaut: <code>normal</code>.
+                    </div>
+                    <div style="text-align: left">
+                        Exemple:
+                        <pre><code>p.intro {
+  font-style: italic;
+}
+</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>CSS Typographique</h2>
+                    <h3>font-weight</h3>
+                    <div>
+                        La propriété <code>font-weight</code> définit le poids de police.<br>
+                        Valeurs répandues: <code>normal</code> (poids normal), <code>bold</code>
+                        (gras) et <code>inherit</code> (hériter).<br>
+                        Héritée si non-définie. Valeur par défaut: <code>normal</code>.
+                    </div>
+                    <div style="text-align: left">
+                        Exemple:
+                        <pre><code>p.important {
+  font-weight: bold;
+}</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>CSS Typographique</h2>
+                    <h3>line-height</h3>
+                    <div>
+                        La propriété <code>line-height</code> définit la hauteur d'une ligne de texte, qui est aussi la
+                        distance entre deux lignes.<br>
+                        Valeurs répandues: <code>normal</code> (hauteur normale), un multiplicateur de la taille de
+                        police actuelle (ex. 1.5), une longueur (px, em, % etc.) et <code>inherit</code> (hériter).<br>
+                        Héritée si non-définie. Valeur par défaut: <code>normal</code>.
+                    </div>
+                    <div style="text-align: left">
+                        Exemple:
+                        <pre><code>body {
+  line-height: 1.5em;
+}</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>CSS Typographique</h2>
+                    <h3>font-variant</h3>
+                    <div>
+                        La propriété <code>font-variant</code> définit si le texte doit être affiché en petites
+                        capitales.<br>
+                        Valeurs possibles: <code>normal</code> (texte normal), <code>small-caps</code> (petites
+                        capitales) et <code>inherit</code> (hériter).<br>
+                        Héritée si non-définie. Valeur par défaut: <code>normal</code>.<br>
+                        <strong>N.B.</strong> Toutes les polices ne supportent pas les petites capitales.
+                    </div>
+                    <div style="text-align: left">
+                        Exemple:
+                        <pre><code>h2 {
+  font-variant: small-caps;
+}</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>CSS Typographique</h2>
+                    <h3>font</h3>
+                    <div>
+                        La propriété <code>font</code> permet d'appliquer les proprétés de police avec une écriture
+                        courte.<br>
+                        Les propriétés doivent être définies dans l'ordre suivant:<br>
+                        <code>font-style font-variant font-weight font-size/line-height font-family</code>
+                    </div>
+                    <div style="text-align: left">
+                        Exemple:
+                        <pre><code>body {
+  /* toutes les propriétés */
+  font: italic small-caps bold 13px/20px 'Helvetica Neue', Arial,
+        Helvetica, sans-serif;
+
+  /* une partie des propriétés */
+  font: bold 13px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>CSS Typographique</h2>
+                    <h3>text-align</h3>
+                    <div>
+                        La propriété <code>text-align</code> définit l'alignement horizontal du texte.<br>
+                        Valeurs possibles: <code>left</code> (gauche), <code>right</code> (droite), <code>center</code>
+                        (centré), <code>justify</code> (justifié) et <code>inherit</code> (hériter).<br>
+                        Héritée si non-définie. Valeur par défaut: <code>left</code> ou <code>right</code> selon la
+                        direction du texte.
+                    </div>
+                    <div style="text-align: left">
+                        Exemple:
+                        <pre><code>div {
+  text-align: center;
+}</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>CSS Typographique</h2>
+                    <h3>text-decoration</h3>
+                    <div>
+                        La propriété <code>text-decoration</code> définit une décoration à ajouter au texte.<br>
+                        Valeurs possibles: <code>none</code> (texte normal), <code>underline</code> (souligné), <code>overline</code>
+                        (surligné), <code>lin-through</code> (barré) et <code>inherit</code> (hériter).<br>
+                        Valeur par défaut: <code>none</code>.
+                    </div>
+                    <div style="text-align: left">
+                        Exemple:
+                        <pre><code>span.annule {
+  text-decoration: line-through;
+}
+
+a {
+  text-decoration: none;
+}</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>CSS Typographique</h2>
+                    <h3>text-indent</h3>
+                    <div>
+                        La propriété <code>text-indent</code> définit l'indentation de la première ligne.<br>
+                        Valeurs possibles: une longueur (px, em, % etc.) et <code>inherit</code> (hériter).<br>
+                        Valeur par défaut: <code>0</code>.
+                    </div>
+                    <div style="text-align: left">
+                        Exemple:
+                        <pre><code>p {
+  text-indent: 20px;
+}</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>CSS Typographique</h2>
+                    <h3>Exemple (HTML)</h3>
+                    <div style="text-align: left">
+                        <pre><code>&lt;h2&gt;&lt;a href=&quot;#&quot;&gt;Titre de l'Article&lt;/a&gt;&lt;/h2&gt;
+&lt;p class=&quot;auteur&quot;&gt;Par Haykel Ben Jemia&lt;/p&gt;
+&lt;p&gt;
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+  fringilla vehicula nisi vitae rutrum. Donec laoreet, arcu in
+  elementum, dui mi auctor tortor, et lorem massa orci&#x2026;
+  &lt;a href=&quot;#&quot;&gt;Lire la suite &#x2192;&lt;/a&gt;
+&lt;/p&gt;</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>CSS Typographique</h2>
+                    <h3>Exemple (CSS)</h3>
+                    <div style="text-align: left">
+                        <pre class="stretch"><code>body {
+  color: #555;
+  font: 13px/20px Arial, 'Helvetica Neue', 'Lucida Grande', sans-serif;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+a {
+  color: #8ec63f;
+  text-decoration: none;
+}
+
+p {
+  text-indent: 20px;
+}
+
+p a {
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.auteur {
+  color: #8c8c8c;
+  font-family: Georgia, Times, 'Times New Roman', serif;
+  font-style: italic;
+  text-indent: 0;
+}</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>CSS Typographique</h2>
+                    <h3>Exemple (résultat)</h3>
+                    <table style="width: 100%">
+                        <thead>
+                            <tr>
+                                <th style="width: 50%">Sans CSS</th>
+                                <th style="width: 50%">Avec CSS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="text-align: center">
+                                    <img src="images/textcss-before.png">
+                                </td>
+                                <td style="text-align: center">
+                                    <img src="images/textcss-after.png">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h2>CSS Typographique</h2>
+                    <h3>Integration de polices (CSS3)</h3>
+                    <div style="text-align: left">
+                        Par défaut, les navigateurs sont limités aux polices installées sur le système de l'utilisateur.<br>
+                        CSS3 nous permet maintenant d'utiliser n'importe quelle police en l'intégrant directement dans
+                        la page.<br>
+                        L'integration se fait grâce à la directive <code>@font-face</code> qui supporte les propriétés
+                        suivantes:
+                        <ul>
+                            <li>
+                                <code>font-family</code> : Le nom à attribuer à la police
+                            </li>
+                            <li>
+                                <code>src</code> : Les références vers les fichiers de police
+                            </li>
+                            <li>
+                                <code>font-style</code> : Le style pour lequel utiliser ces fichiers
+                                (<code>normal</code> par défaut)
+                            </li>
+                            <li>
+                                <code>font-weight</code> : Le poids pour lequel utiliser ces fichiers
+                                (<code>normal</code> par défaut)
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>CSS Typographique</h2>
+                    <h3>Integration de polices (CSS3)</h3>
+                    <div style="text-align: left">
+                        Exemple:
+                        <pre class="stretch"><code>@font-face {
+  font-family: 'Bryant';
+  src: url('fonts/bryant-normal.eot');
+  src: url('fonts/bryant-normal.eot') format('embedded-opentype'),
+       url('fonts/bryant-normal.woff') format('woff'),
+       url('fonts/bryant-normal.ttf') format('truetype'),
+       url('fonts/bryant-normal.svg') format('svg');
+}
+
+@font-face {
+  font-family: 'Bryant';
+  font-weight: bold;
+  src: url('fonts/bryant-bold.eot');
+  src: url('fonts/bryant-bold.eot') format('embedded-opentype'),
+       url('fonts/bryant-bold.woff') format('woff'),
+       url('fonts/bryant-bold.ttf') format('truetype'),
+       url('fonts/bryant-bold.svg') format('svg');
+}
+
+body {
+  font-family: 'Bryant', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}</code></pre>
+                    </div>
+                </section>
+            </section>
+            <section data-background-color="rgba( 200, 50, 30, 0.4 )">
+                <section>
+                    <h2>Listes</h2>
+                    <h3>Liste non-ordonnée</h3>
+                    <div>
+                        Définit une liste d'éléments dont l'ordre n'est pas important.<br>
+                        La liste est définie avec l'élément bloc <code>ul</code> et les éléments de la liste avec
+                        l'élément
+                        bloc <code>li</code>.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <table style="width: 100%">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 50%">
+                                        <pre><code class="html">&lt;ul&gt;
+  &lt;li&gt;iPad&lt;/li&gt;
+  &lt;li&gt;iPhone&lt;/li&gt;
+  &lt;li&gt;MacBook Air&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                                    </td>
+                                    <td style="width: 50%"><img src="images/ul.png"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section>
+                    <h2>Listes</h2>
+                    <h3>Liste ordonnée</h3>
+                    <div>
+                        Définit une liste d'éléments qui possèdent un ordre bien définit.<br>
+                        La liste est définie avec l'élément bloc <code>ol</code> et les éléments de la liste avec
+                        l'élément
+                        bloc <code>li</code>.<br>
+                        L'attribut <code>start</code> de <code>ol</code> permet de définir le premier numéro.<br>
+                        L'attribut <code>value</code> de <code>li</code> permet de modifier la numérotation.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <table style="width: 100%">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 50%">
+                                        <pre class="stretch"><code class="html">&lt;ol&gt;
+  &lt;li&gt;iPad&lt;/li&gt;
+  &lt;li&gt;iPhone&lt;/li&gt;
+  &lt;li&gt;MacBook Air&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ol start=&quot;30&quot;&gt;
+  &lt;li&gt;iPad&lt;/li&gt;
+  &lt;li&gt;iPhone&lt;/li&gt;
+  &lt;li&gt;MacBook Air&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;iPad&lt;/li&gt;
+  &lt;li value=&quot;9&quot;&gt;iPhone&lt;/li&gt;
+  &lt;li&gt;MacBook Air&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                                    </td>
+                                    <td style="width: 50%"><img src="images/ol.png"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section>
+                    <h2>Listes</h2>
+                    <h3>Liste de définitions</h3>
+                    <div>
+                        Définit une liste de termes et leurs définitions.<br>
+                        La liste est définie avec l'élément bloc <code>dl</code>, un terme avec l'élément bloc
+                        <code>dt</code> et une définition avec l'élément bloc <code>dd</code>.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <table style="width: 100%">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 50%">
+                                        <pre><code class="html">&lt;dl&gt;
+  &lt;dt&gt;Grenouille&lt;/dt&gt;
+  &lt;dd&gt;Truc vert humide&lt;/dd&gt;
+  &lt;dt&gt;Lapin&lt;/dt&gt;
+  &lt;dd&gt;Truc chaud et doux&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+                                    </td>
+                                    <td style="width: 50%"><img src="images/dl.png"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section>
+                    <h2>Listes</h2>
+                    <h3>Listes imbriquées</h3>
+                    <div>
+                        Il est possible de définir des listes à l'intérieur des éléments d'autres listes pour créer des
+                        listes imbriquées.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <table style="width: 100%">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 50%">
+                                        <pre><code class="html">&lt;ol&gt;
+  &lt;li&gt;Walk the dog&lt;/li&gt;
+  &lt;li&gt;Fold laundry&lt;/li&gt;
+  &lt;li&gt;Go to the grocery and buy:
+    &lt;ul&gt;
+      &lt;li&gt;Milk&lt;/li&gt;
+      &lt;li&gt;Bread&lt;/li&gt;
+      &lt;li&gt;Cheese&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Mow the lawn&lt;/li&gt;
+  &lt;li&gt;Make dinner&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                                    </td>
+                                    <td style="width: 50%"><img src="images/lists-nested.png"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </section>
+            <section data-background-color="rgba( 50, 200, 90, 0.4 )">
+                <section>
+                    <h2>CSS Listes</h2>
+                    <h3>list-style-type</h3>
+                    <div style="text-align: left">
+                        Définit l'aspect de la puce pour les listes <code>ol</code> et <code>ul</code>.<br>
+                        Les valeurs les plus utilisées:<br>
+                        <ul>
+                            <li><code>none</code> : sans puce</li>
+                            <li><code>disc</code> : cercle plein, par défaut pour <code>ul</code></li>
+                            <li><code>circle</code> : cercle vide</li>
+                            <li><code>square</code> : carré plein</li>
+                            <li><code>decimal</code> : nombre déciaml, par défaut pour <code>ol</code></li>
+                            <li><code>lower-roman</code> : chiffres romains minuscules (i, ii, iii, iv, v, etc.)</li>
+                            <li><code>uppser-roman</code> : chiffres romains majuscules (I, II, III, IV, V, etc.)</li>
+                            <li><code>lower-latin</code>/<code>lower-alpha</code> :
+                                lettres ASCII minuscules (a, b, c, ..., z)
+                            </li>
+                            <li><code>upper-latin</code>/<code>upper-alpha</code> :
+                                lettres ASCII majuscules (A, B, C, ..., Z)
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>CSS Listes</h2>
+                    <h3>list-style-type</h3>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <table style="width: 100%">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <pre class="stretch"><code class="html">&lt;ul style=&quot;list-style-type: none&quot;&gt;
+  &lt;li&gt;iPad&lt;/li&gt;
+  &lt;li&gt;iPhone&lt;/li&gt;
+  &lt;li&gt;MacBook Air&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul style=&quot;list-style-type: circle&quot;&gt;
+  &lt;li&gt;iPad&lt;/li&gt;
+  &lt;li&gt;iPhone&lt;/li&gt;
+  &lt;li&gt;MacBook Air&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul style=&quot;list-style-type: square&quot;&gt;
+  &lt;li&gt;iPad&lt;/li&gt;
+  &lt;li&gt;iPhone&lt;/li&gt;
+  &lt;li&gt;MacBook Air&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol style=&quot;list-style-type: upper-roman&quot;&gt;
+  &lt;li&gt;iPad&lt;/li&gt;
+  &lt;li&gt;iPhone&lt;/li&gt;
+  &lt;li&gt;MacBook Air&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ol style=&quot;list-style-type: lower-alpha&quot;&gt;
+  &lt;li&gt;iPad&lt;/li&gt;
+  &lt;li&gt;iPhone&lt;/li&gt;
+  &lt;li&gt;MacBook Air&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                                    </td>
+                                    <td><img src="images/list-style-type.png"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section>
+                    <h2>CSS Listes</h2>
+                    <h3>list-style-position</h3>
+                    <div style="text-align: left">
+                        Définit la positin de la puce par rapport au bloc de l'élément.<br>
+                        Valeurs possibles:<br>
+                        <ul>
+                            <li><code>inside</code> : à l'intérieur de l'élément</li>
+                            <li><code>outside</code> : à l'extérieur de l'élément, par défaut</li>
+                            <li><code>inherit</code> : hériter</li>
+                        </ul>
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <table style="width: 100%">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <pre><code class="html">&lt;ul style=&quot;list-style-position: outside&quot;&gt;
+    &lt;li&gt;iPad&lt;/li&gt;
+    &lt;li&gt;iPhone&lt;/li&gt;
+    &lt;li&gt;MacBook Air&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul style=&quot;list-style-position: inside&quot;&gt;
+    &lt;li&gt;iPad&lt;/li&gt;
+    &lt;li&gt;iPhone&lt;/li&gt;
+    &lt;li&gt;MacBook Air&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                                    </td>
+                                    <td><img src="images/list-style-position.png"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section>
+                    <h2>CSS Listes</h2>
+                    <h3>list-style-image</h3>
+                    <div style="text-align: left">
+                        Définit une image pour la puce.<br>
+                        Valeurs possibles:<br>
+                        <ul>
+                            <li><code>none</code> : aucune, par défaut</li>
+                            <li><code>url('...')</code> : une référence vers une image</li>
+                        </ul>
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <table style="width: 100%">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <pre><code class="html">&lt;ul style=&quot;list-style-image: url('img/sqpurple.gif')&quot;&gt;
+    &lt;li&gt;iPad&lt;/li&gt;
+    &lt;li&gt;iPhone&lt;/li&gt;
+    &lt;li&gt;MacBook Air&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                                    </td>
+                                    <td><img src="images/list-style-image.png"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section>
+                    <h2>CSS Listes</h2>
+                    <h3>list-style</h3>
+                    <div>
+                        Ecriture courte pour définir plusierus propriétés de liste. Syntaxe:<br>
+                        <code>list-style: list-style-type list-style-position list-style-image</code><br>
+                        Si une valeur d'une propriété est omise, sa valeur par défaut est utilisée.<br>
+                        <span style="font-weight: bold">N.B. </span> si toutes les propriétés sont définies, l'image est
+                        utilisée et le type n'a d'utilité que si l'image n'a pas été trouvée.
+                    </div>
+                    <div style="text-align: left;">
+                        <em>Exemples:</em>
+                        <pre><code>/* toutes les propriétés */
+ul {
+    list-style: circle inside url('img/sqpurple.gif');
+}
+
+/* position et image */
+ul {
+    list-style: inside url('img/sqpurple.gif');
+}</code></pre>
+                    </div>
+                </section>
+            </section>
+            <section data-background-color="rgba( 0, 0, 0, 0.4 )">
+                <section>
+                    <h2>Multimédia</h2>
+                    <h3>Image</h3>
+                    <div style="text-align: left">
+                        Une image est définie avec l'élément en ligne <code>img</code>.<br>
+                        Attributs (* : requis) :<br>
+                        <ul>
+                            <li>
+                                <code>src</code>* : chemin du fichier de l'image (png, jpg, gif, bmp).
+                            </li>
+                            <li>
+                                <code>alt</code>* : brève description. Utilisée par les navigateurs qui ne supportent
+                                pas l'affichage d'images.
+                            </li>
+                            <li>
+                                <code>width</code> : largeur de l'image (préférez CSS!).
+                            </li>
+                            <li>
+                                <code>height</code> : hauteur de l'image (préférez CSS!).
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Multimédia</h2>
+                    <h3>Image</h3>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <table style="width: 100%">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <pre class="stretch"><code class="html">&lt;style&gt;
+    #img1 { width: 60px; }
+    #img2 { width: 60px; height: 30px; }
+&lt;/style&gt;
+&lt;p&gt;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    &lt;img src=&quot;img/smiley.gif&quot; alt=&quot;Smiley face&quot;&gt;. Etiam
+    vitae magna varius, pharetra quam vel, tempor dolor.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;img src=&quot;img/smiley.gif&quot; alt=&quot;Smiley face&quot;&gt;
+    &lt;img id=&quot;img1&quot; src=&quot;img/smiley.gif&quot; alt=&quot;Smiley face&quot;&gt;
+    &lt;img id=&quot;img2&quot; src=&quot;img/smiley.gif&quot; alt=&quot;Smiley face&quot;&gt;
+&lt;/p&gt;</code></pre>
+                                    </td>
+                                    <td><img src="images/img.png"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section>
+                    <h2>Multimédia</h2>
+                    <h3>Audio</h3>
+                    <div style="text-align: left">
+                        HTML5 propose l'élément en ligne <code>audio</code> pour repropduire des fichiers audio.<br>
+                        Attributs (les plus utilisés, tous optionnels) :<br>
+                        <ul>
+                            <li><code>src</code> : chemin du fichier audio (ogg, mp3, acc, wav).</li>
+                            <li><code>controls</code> : afficher les contrôles du lecteur.</li>
+                            <li><code>autoplay</code> : lecture automatique.</li>
+                            <li><code>loop</code> : lecture en boucle.</li>
+                            <li><code>preload</code> : télécharger au chargement de la page.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Multimédia</h2>
+                    <h3>Audio</h3>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <table style="width: 100%">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <pre><code class="html">&lt;audio src=&quot;audio/error.mp3&quot; controls&gt;
+  &lt;p&gt;
+    Votre navigateur ne supporte pas l'&eacute;l&eacute;ment
+    audio. Veuillez &lt;a href=&quot;audio/error.mp3&quot;&gt;
+    t&eacute;l&eacute;charger&lt;/a&gt; le fichier.
+  &lt;/p&gt;
+&lt;/audio&gt;</code></pre>
+                                    </td>
+                                    <td><img src="images/audio.png"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section>
+                    <h2>Multimédia</h2>
+                    <h3>Vidéo</h3>
+                    <div style="text-align: left">
+                        HTML5 propose l'élément en ligne <code>video</code> pour repropduire des fichiers vidéo.<br>
+                        Attributs (les plus utilisés, tous optionnels) :<br>
+                        <ul>
+                            <li><code>src</code> : chemin du fichier vidéo (mp4, webm, ogg).</li>
+                            <li><code>controls</code> : afficher les contrôles du lecteur.</li>
+                            <li><code>autoplay</code> : lecture automatique.</li>
+                            <li><code>loop</code> : lecture en boucle.</li>
+                            <li><code>preload</code> : télécharger au chargement de la page.</li>
+                            <li><code>poster</code> : chemin d'un fichier image à afficher dans le cadre de l'élément
+                                jusqu'à que l'utilisateur lance la lecture.
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Multimédia</h2>
+                    <h3>Vidéo</h3>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em>
+                        <table style="width: 100%">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <pre><code class="html">&lt;video src=&quot;video/mov_bbb.mp4&quot; controls&gt;
+  &lt;p&gt;
+    Votre navigateur ne supporte pas l'&eacute;l&eacute;ment
+    video. Veuillez &lt;a href=&quot;video/mov_bbb.mp4&quot;&gt;
+    t&eacute;l&eacute;charger&lt;/a&gt; le fichier.
+  &lt;/p&gt;
+&lt;/video&gt;</code></pre>
+                                    </td>
+                                    <td><img src="images/video.png"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section>
+                    <h2>Multimédia</h2>
+                    <h3>Sources Alternatives</h3>
+                    <div style="text-align: left">
+                        Les navigateurs supportent différents formats pour les fichiers audio et vidéo.<br>
+                        Pour garantir la lecture de médias par tous les navigateurs modernes, on peut utiliser l'élément
+                        <code>source</code> pour spécifier plusieurs fichiers de différents formats pour un élément
+                        audio ou vidéo.<br>
+                        Attributs (* : requis) :<br>
+                        <ul>
+                            <li><code>src</code>* : chemin du fichier.</li>
+                            <li><code>type</code> : le type MIME du fichier (exemples:
+                                <code>audio/ogg</code>,
+                                <code>audio/mpeg</code>,
+                                <code>video/ogg</code>,
+                                <code>video/mp4</code>,
+                                <code>video/webm</code>).
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Multimédia</h2>
+                    <h3>Sources Alternatives</h3>
+                    <div style="text-align: left;">
+                        <em>Exemples:</em>
+                        <pre><code>&lt;audio controls&gt;
+  &lt;source src=&quot;audio/error.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+  &lt;source src=&quot;audio/error.wav&quot; type=&quot;audio/wave&quot;&gt;
+  &lt;p&gt;
+    Votre navigateur ne supporte pas l'&eacute;l&eacute;ment audio. Veuillez
+    &lt;a href=&quot;audio/error.mp3&quot;&gt;t&eacute;l&eacute;charger&lt;/a&gt; le fichier.
+  &lt;/p&gt;
+&lt;/audio&gt;
+
+&lt;video controls&gt;
+  &lt;source src=&quot;video/mov_bbb.mp4&quot; type=&quot;video/mp4&quot;&gt;
+  &lt;source src=&quot;video/mov_bbb.ogg&quot; type=&quot;video/ogg&quot;&gt;
+  &lt;p&gt;
+    Votre navigateur ne supporte pas l'&eacute;l&eacute;ment video. Veuillez
+    &lt;a href=&quot;video/mov_bbb.mp4&quot;&gt;t&eacute;l&eacute;charger&lt;/a&gt; le fichier.
+  &lt;/p&gt;
+&lt;/video&gt;</code></pre>
+                    </div>
+                </section>
+            </section>
+            <section data-background-color="rgba( 22, 152, 213, 0.4 )">
+                <section>
+                    <h2>Formulaires</h2>
+                    <h3>form</h3>
+                    <div style="text-align: left">
+                        Un formulaire est définit avec l'élément bloc <code>form</code>.<br>
+                        Les champs du formulaire sont définis à l'intérieur de cet élément.<br>
+                        Attributs (les plus utilisés, tous optionnels) :<br>
+                        <ul>
+                            <li>
+                                <code>action</code> : chemin du programme qui traitera les données.
+                            </li>
+                            <li>
+                                <code>method</code> : méthode HTTP qui sera utilisée pour envoyer les données au
+                                serveur.
+                            </li>
+                            <li>
+                                <code>enctype</code> : type MIME à utiliser pour encoder les données au serveur. La
+                                valeur par défaut est
+                                <code>application/x-www-form-urlencoded</code>. Pour l'envoi de fichiers, il faut
+                                utiliser
+                                <code>multipart/form-data</code>.
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Formulaires</h2>
+                    <h3>Méthode HTTP 'GET'</h3>
+                    <div>
+                        Données envoyées dans l'URL de la requête HTTP:<br>
+                        <code>/test/form.php<em>?name1=value1&name2=value2</em></code><br>
+                        Vu que les données font partie de l'URL, elle peuvent rester dans le cache et l'historique du
+                        navigateur et peuvent être ajoutées aux signets.<br>
+                        La taille des données est limitée.<br>
+                        Ne jamais utiliser pour les données sensibles.<br>
+                        L'utilisation correcte est pour effectuer des opérations qui ne modifient pas de données sur le
+                        serveur.
+                    </div>
+                </section>
+                <section>
+                    <h2>Formulaires</h2>
+                    <h3>Méthode HTTP 'POST'</h3>
+                    <div>
+                        Données envoyées dans le corps de la requête HTTP.<br>
+                        Les données ne peuvent pas rester dans le cache et l'historique du navigateur et ne peuvent pas
+                        être ajoutées aux signets.<br>
+                        La taille des données n'est pas limitée.<br>
+                        L'utilisation correcte est pour effectuer des opérations qui modifient des données sur le
+                        serveur.
+                    </div>
+                </section>
+                <section>
+                    <h2>Formulaires</h2>
+                    <h3>Champs</h3>
+                    <div style="text-align: left">
+                        Les champs d'un formulaire sont définis avec les éléments en ligne <code>input</code>, <code>textarea</code>
+                        et <code>select</code>.<br>
+                        Attributs communs :<br>
+                        <ul>
+                            <li>
+                                <code>name</code> : sert à identifier le champ dans les données envoyées au serveur.
+                                S'il n'est pas définit,
+                                <strong>les données du champ ne sont pas envoyées au serveur</strong>.
+                            </li>
+                            <li>
+                                <code>disabled</code> : si présent, le champ est désactivé et l'utilisateur ne peux pas
+                                le manipuler. En plus,
+                                <strong>les données du champ ne sont pas envoyées au serveur</strong>.
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Formulaires</h2>
+                    <h3>Champ de texte simple</h3>
+                    <div style="text-align: left">
+                        Définit avec l'élément <code>input</code>.<br>
+                        L'attribut <code>type</code> doit avoir la valeur <code>text</code>.<br>
+                        Attributs supplémentaires :<br>
+                        <ul>
+                            <li><code>value</code> : valeur du champ (texte prédéfinit).</li>
+                            <li><code>readonly</code> : si présent, le champ est ne peut pas être modifié par
+                                l'utilisateur.
+                            </li>
+                            <li><code>maxlength</code> : nombre maximum de caractères autorisé.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Formulaires</h2>
+                    <h3>Champ de mot de passe</h3>
+                    <div>
+                        C'est un champ de texte simple dont le contenu est caché en affichant un caractère spécial à la
+                        place des caractères du texte.<br>
+                        Ce comprtement est activé en donnant la valeur <code>password</code> à l'attribut
+                        <code>type</code> de l'élément <code>input</code>.<br>
+                    </div>
+                </section>
+                <section>
+                    <h2>Formulaires</h2>
+                    <h3>Champ de texte multiligne</h3>
+                    <div style="text-align: left">
+                        Définit avec l'élément <code>textarea</code>.<br>
+                        Le contenu de l'élément définit la valeur du champ (texte prédéfinit).<br>
+                        Attributs supplémentaires :<br>
+                        <ul>
+                            <li><code>readonly</code> : si présent, le champ est ne peut pas être modifié par
+                                l'utilisateur.
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Formulaires</h2>
+                    <h3>Bouton radio</h3>
+                    <div style="text-align: left">
+                        Définit avec l'élément <code>input</code>.<br>
+                        L'attribut <code>type</code> doit avoir la valeur <code>radio</code>.<br>
+                        Tous les boutons radio qui appartiennent au même groupe doivent avoir la même valeur pour
+                        l'attribut <code>name</code> et des valeurs différentes pour l'attribut <code>value</code>.<br>
+                        Attributs supplémentaires :<br>
+                        <ul>
+                            <li>
+                                <code>checked</code> : si présent, le champ est préselectionné au chargement de la page.
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Formulaires</h2>
+                    <h3>Case à cocher</h3>
+                    <div style="text-align: left">
+                        Définit avec l'élément <code>input</code>.<br>
+                        L'attribut <code>type</code> doit avoir la valeur <code>checkbox</code>.<br>
+                        Toutes les cases à cocher qui appartiennent au même groupe doivent avoir la même valeur pour
+                        l'attribut <code>name</code> et des valeurs différentes pour l'attribut <code>value</code>.<br>
+                        Attributs supplémentaires :<br>
+                        <ul>
+                            <li>
+                                <code>checked</code> : si présent, le champ est préselectionné au chargement de la page.
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Formulaires</h2>
+                    <h3>Menu</h3>
+                    <div style="text-align: left">
+                        Définit avec l'élément <code>select</code>.<br>
+                        Les options du menu sont définies avec l'élément <code>option</code>.<br>
+                        Attributs supplémentaires :<br>
+                        <ul>
+                            <li>
+                                <code>multiple</code> : si présent, plusieurs options peuvent être sélectionnées
+                                simultanément. Sinon, une seule.
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Formulaires</h2>
+                    <h3>Option de menu</h3>
+                    <div style="text-align: left">
+                        Définie avec l'élément <code>option</code>.<br>
+                        Le contenu définit le texte à afficher à l'utilisateur.<br>
+                        Attributs :<br>
+                        <ul>
+                            <li>
+                                <code>value</code> : valeur à envoyer au serveur si l'option est sélectionnée.
+                            </li>
+                            <li>
+                                <code>selected</code> : si présent, l'option est présélectionnée au chargement de la
+                                page.
+                            </li>
+                            <li>
+                                <code>disabled</code> : si présent, l'option ne peut pas être sélectionnée par
+                                l'utilisateur.
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Formulaires</h2>
+                    <h3>Champ fichier</h3>
+                    <div>
+                        Permet d'envoyer des fichiers au serveur.<br>
+                        Définit avec l'élément <code>input</code>.<br>
+                        L'attribut <code>type</code> doit avoir la valeur <code>file</code>.<br>
+                        L'attribut <code>enctype</code> de l'élément <code>form</code> doit avoir la valeur
+                        <code>multipart/form-data</code>.
+                    </div>
+                </section>
+                <section>
+                    <h2>Formulaires</h2>
+                    <h3>Champ caché</h3>
+                    <div style="text-align: left">
+                        Permet de passer des données au serveur sans les montrer à l'utilisateur.<br>
+                        Définit avec l'élément <code>input</code>.<br>
+                        L'attribut <code>type</code> doit avoir la valeur <code>hidden</code>.<br>
+                        Attributs supplémentaires :<br>
+                        <ul>
+                            <li><code>value</code> : valeur à envoyer au serveur.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Formulaires</h2>
+                    <h3>Légende</h3>
+                    <div style="text-align: left">
+                        Définie avec l'élément <code>label</code>.<br>
+                        Peut être associé à un champ en utilisant l'attribut <code>for</code> ou en plaçant l'élément du
+                        champ à l'intérieur de l'élément <code>label</code>.<br>
+                        Attributs :<br>
+                        <ul>
+                            <li><code>for</code> : ID de l'élément du champ à associer avec la légende.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Formulaires</h2>
+                    <h3>Bouton d'envoi</h3>
+                    <div>
+                        Sert à envoyer le formulaire au serveur.<br>
+                        Définit avec l'élément <code>input</code>.<br>
+                        L'attribut <code>type</code> doit avoir la valeur <code>submit</code>.<br>
+                        Le texte du bouton est définit dans l'attribut <code>value</code>.
+                    </div>
+                </section>
+                <section>
+                    <h2>Formulaires</h2>
+                    <h3>Bouton de réinitialisation</h3>
+                    <div>
+                        Sert à réinitialiser les champs du formulaire à leurs valeurs lors du chargement de la page.<br>
+                        Définit avec l'élément <code>input</code>.<br>
+                        L'attribut <code>type</code> doit avoir la valeur <code>reset</code>.<br>
+                        Le texte du bouton est définit dans l'attribut <code>value</code>.
+                    </div>
+                </section>
+                <section>
+                    <h2>Formulaires</h2>
+                    <h3>Exemple (HTML 1/2)</h3>
+                    <div style="text-align: left">
+                        <pre class="stretch"><code>&lt;style&gt;
+  label.col1 {
+    display: inline-block;
+    width: 100px;
+    vertical-align: top;
+  }
+  div.buttons {
+    margin-left: 100px;
+  }
+&lt;/style&gt;
+&lt;form action=&quot;form.php&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+  &lt;div&gt;
+    &lt;label class=&quot;col1&quot; for=&quot;nom&quot;&gt;Nom&lt;/label&gt;
+    &lt;input id=&quot;nom&quot; name=&quot;nom&quot; type=&quot;text&quot; value=&quot;texte pr&eacute;d&eacute;finit&quot;&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label class=&quot;col1&quot; for=&quot;password&quot;&gt;Mot de passe&lt;/label&gt;
+    &lt;input id=&quot;password&quot; name=&quot;password&quot; type=&quot;password&quot; value=&quot;texte pr&eacute;d&eacute;finit&quot;&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label class=&quot;col1&quot; for=&quot;message&quot;&gt;Message&lt;/label&gt;
+    &lt;textarea id=&quot;message&quot; name=&quot;message&quot;&gt;texte pr&eacute;d&eacute;finit&lt;/textarea&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label class=&quot;col1&quot;&gt;Jour 1&lt;/label&gt;
+    &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;jour1&quot; value=&quot;ven&quot; checked&gt; Vendredi&lt;/label&gt;
+    &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;jour1&quot; value=&quot;sam&quot;&gt; Samedi&lt;/label&gt;
+    &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;jour1&quot; value=&quot;dim&quot;&gt; Dimanche&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label class=&quot;col1&quot;&gt;Jour 2&lt;/label&gt;
+    &lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;jour2&quot; value=&quot;ven&quot; checked&gt; Vendredi&lt;/label&gt;
+    &lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;jour2&quot; value=&quot;sam&quot;&gt; Samedi&lt;/label&gt;
+    &lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;jour2&quot; value=&quot;dim&quot;&gt; Dimanche&lt;/label&gt;
+  &lt;/div&gt;</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Formulaires</h2>
+                    <h3>Exemple (HTML 2/2)</h3>
+                    <div style="text-align: left">
+                        <pre class="stretch"><code>  &lt;div&gt;
+    &lt;label class=&quot;col1&quot; for=&quot;jour3&quot;&gt;Jour 3&lt;/label&gt;
+    &lt;select id=&quot;jour3&quot; name=&quot;jour3&quot;&gt;
+      &lt;option value=&quot;ven&quot; selected&gt;Vendredi&lt;/option&gt;
+      &lt;option value=&quot;sam&quot;&gt;Samedi&lt;/option&gt;
+      &lt;option value=&quot;dim&quot;&gt;Dimanche&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label class=&quot;col1&quot; for=&quot;jour4&quot;&gt;Jour 4&lt;/label&gt;
+    &lt;select id=&quot;jour4&quot; name=&quot;jour4&quot; multiple&gt;
+      &lt;option value=&quot;ven&quot; selected&gt;Vendredi&lt;/option&gt;
+      &lt;option value=&quot;sam&quot;&gt;Samedi&lt;/option&gt;
+      &lt;option value=&quot;dim&quot;&gt;Dimanche&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label class=&quot;col1&quot; for=&quot;file&quot;&gt;Fichier&lt;/label&gt;
+    &lt;input id=&quot;file&quot; name=&quot;file&quot; type=&quot;file&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;buttons&quot;&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Envoyer&quot;&gt;
+    &lt;input type=&quot;reset&quot; value=&quot;Effacer&quot;&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Formulaires</h2>
+                    <h3>Exemple (résultat)</h3>
+                    <img src="images/form.png">
+                </section>
+            </section>
+            <section data-background-color="rgba( 200, 50, 30, 0.4 )">
+                <section>
+                    <h2>Tableaux</h2>
+                    <h3>Introduction</h3>
+                    <div>
+                        Un tableau sert à la présentation de données.<br>
+                        Ne pas utiliser pour la disposition des éléments de la page. Pour cela, utiliser les divisions
+                        <code>div</code> et le positionnement CSS.
+                    </div>
+                </section>
+                <section>
+                    <h2>Tableaux</h2>
+                    <h3>Structure</h3>
+                    <div>
+                        Un tableau est définit avec l'élément <code>table</code>.<br>
+                        Un tableau est constitué de lignes. Une ligne est définie avec l'élément <code>tr</code>.<br>
+                        Chaque ligne est constituée de cellules d'entête ou de données. Une céllule d'entête est définie
+                        avec l'élément <code>th</code>. Une céllule de données est définie avec l'élément
+                        <code>td</code>.
+                    </div>
+                </section>
+                <section>
+                    <h2>Tableaux</h2>
+                    <h3>Structure</h3>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em> (le tableau à été stylé pour le rendre plus lisible!)<br>
+                        <table>
+                            <tr>
+                                <td>
+                                    <pre class="stretch"><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Soci&eacute;t&eacute;&lt;/th&gt;
+    &lt;th&gt;Contacte&lt;/th&gt;
+    &lt;th&gt;Pays&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Alfreds Futterkiste&lt;/td&gt;
+    &lt;td&gt;Maria Anders&lt;/td&gt;
+    &lt;td&gt;Allemagne&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Berglunds snabbk&ouml;p&lt;/td&gt;
+    &lt;td&gt;Christina Berglund&lt;/td&gt;
+    &lt;td&gt;Su&egrave;de&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Centro comercial Moctezuma&lt;/td&gt;
+    &lt;td&gt;Francisco Chang&lt;/td&gt;
+    &lt;td&gt;M&eacute;xique&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                                </td>
+                                <td>
+                                    <img src="images/table1.png">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+                <section>
+                    <h2>Tableaux</h2>
+                    <h3>Combinaison de céllules</h3>
+                    <div>
+                        Il est possible de combiner plusiseurs céllules (d'entête ou de données) en une seule.<br>
+                        Pour combiner horizontalement, on utilise l'attribut <code>colspan</code>.<br>
+                        Pour combiner verticalement, on utilise l'attribut <code>rowspan</code>.<br>
+                        On affecte à ces attributs le nombre de cellules à combiner.
+                    </div>
+                </section>
+                <section>
+                    <h2>Tableaux</h2>
+                    <h3>Combinaison de céllules</h3>
+                    <div style="text-align: left;">
+                        <em>Exemple:</em> (le tableau à été stylé pour le rendre plus lisible!)<br>
+                        <table>
+                            <tr>
+                                <td>
+                                    <pre class="stretch"><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Soci&eacute;t&eacute;&lt;/th&gt;
+    &lt;th&gt;Contacte&lt;/th&gt;
+    &lt;th&gt;Pays&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th colspan=&quot;3&quot;&gt;Partenaires Long T&eacute;rme&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td rowspan=&quot;2&quot;&gt;Alfreds Futterkiste&lt;/td&gt;
+    &lt;td&gt;Maria Anders&lt;/td&gt;
+    &lt;td rowspan=&quot;2&quot;&gt;Allemagne&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Philip Cramer&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Berglunds snabbk&ouml;p&lt;/td&gt;
+    &lt;td&gt;Christina Berglund&lt;/td&gt;
+    &lt;td&gt;Su&egrave;de&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th colspan=&quot;3&quot;&gt;Nouveaux Partenaires&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Centro comercial Moctezuma&lt;/td&gt;
+    &lt;td&gt;Francisco Chang&lt;/td&gt;
+    &lt;td&gt;M&eacute;xique&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                                </td>
+                                <td>
+                                    <img src="images/table2.png">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+                <section>
+                    <h2>Tableaux</h2>
+                    <h3>Styles CSS</h3>
+                    <div style="text-align: left">
+                        En plus des propriétés CSS standards, il existe deux propriétés spécifiques à l'élément <code>table</code>:<br>
+                        <ul>
+                            <li>
+                                <code>border-collapse</code> : définit le modèle de rendu des bordures. Valeurs
+                                possibles:
+                                <code>separate</code> (bordures séparées, valeur par défaut),
+                                <code>collapse</code> (bordures fusionnées) et
+                                <code>inherit</code> (hériter).
+                            </li>
+                            <li>
+                                <code>border-spacing</code> : une longueur qui définit la distance entre les bords de
+                                cellules adjacentes pour le modèle de bordures séparées.
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Tableaux</h2>
+                    <h3>Styles CSS</h3>
+                    <div style="text-align: left;">
+                        <em>Exemples:</em><br>
+                        <table>
+                            <tr>
+                                <td>
+                                    <pre class="stretch"><code>table {
+  border: 1px solid #c6c9cc;
+  border-collapse: separate;
+  border-spacing: 5px;
+}
+
+th, td {
+  border: 1px solid #c6c9cc;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+}
+</code></pre>
+                                </td>
+                                <td>
+                                    <img src="images/table3.png">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <pre class="stretch"><code>table {
+  border: 1px solid #c6c9cc;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #c6c9cc;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+}
+</code></pre>
+                                </td>
+                                <td>
+                                    <img src="images/table1.png">
+                                </td>
+                        </table>
+                    </div>
+                </section>
+            </section>
+            <section data-background-color="rgba( 50, 200, 90, 0.4 )">
+                <h1>Fin</h1>
+            </section>
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+    <script>
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: 'lib/js/classList.js', condition: function()
+                {
+                    return !document.body.classList;
+                } },
+                { src: 'plugin/markdown/marked.js', condition: function()
+                {
+                    return !!document.querySelector('[data-markdown]');
+                } },
+                { src: 'plugin/markdown/markdown.js', condition: function()
+                {
+                    return !!document.querySelector('[data-markdown]');
+                } },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function()
+                {
+                    hljs.initHighlightingOnLoad();
+                } },
+                { src: 'plugin/zoom-js/zoom.js', async: true, condition: function()
+                {
+                    return !!document.body.classList;
+                } },
+                { src: 'plugin/notes/notes.js', async: true, condition: function()
+                {
+                    return !!document.body.classList;
+                } }
+            ]
+        });
+    </script>
+</body>
+</html>
